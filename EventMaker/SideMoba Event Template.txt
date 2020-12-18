@@ -1,0 +1,8 @@
+|-
+|EVENT_ID
+|[[File:e-EVENT_ID.png|200px|border|center|frameless|link=EVENT_NAME]][[EVENT_NAME]]
+|EVENT_YEAR
+|START_DATE – FINISH_DATE
+|EVENT_TYPE
+|IDOL1IDOL2IDOL3IDOL4IDOL5
+|[[File:g-EVENT_ID.png|200px|border|center|frameless|link=]]GACHA_NAME

@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://IdolList3.gd" type="Script" id=1]
+
+[node name="WindowDialog" type="WindowDialog"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -491.0
+margin_top = -279.0
+margin_right = 491.0
+margin_bottom = 279.0
+window_title = "Select Idol 1"
+resizable = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 15.0
+margin_right = -15.0
+margin_bottom = -64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+margin_right = 952.0
+margin_bottom = 479.0
+
+[node name="VBoxContainer" type="GridContainer" parent="MarginContainer/ScrollContainer"]
+custom_constants/vseparation = 10
+custom_constants/hseparation = 10
+columns = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -476.0
+margin_top = -51.0
+margin_right = 476.0
+margin_bottom = -15.0
+custom_constants/separation = 50
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cancel" type="Button" parent="HBoxContainer"]
+margin_left = 426.0
+margin_right = 526.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 100, 0 )
+text = "Cancel"
+[connection signal="pressed" from="HBoxContainer/Cancel" to="." method="_on_Cancel_pressed"]

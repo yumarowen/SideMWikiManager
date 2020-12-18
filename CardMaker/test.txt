@@ -1,0 +1,17 @@
+{{CardData
+| title-jpn=test
+| title-eng=
+| rare=R
+| descrip1-jpn=
+| descrip1-eng=
+| descrip2-jpn=
+| descrip2-eng=
+| cost=
+| skill-jpn=
+| skill-eng=
+| effect-jpn=
+| effect-eng=
+| notes1=
+| notes2=
+| notes3= | notes4= | notes5= 
+}}

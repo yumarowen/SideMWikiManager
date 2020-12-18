@@ -1,0 +1,399 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://EventMaker/NormalFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://EventMaker/EventMaker.gd" type="Script" id=2]
+[ext_resource path="res://IdolList3.tscn" type="PackedScene" id=3]
+[ext_resource path="res://EventMaker/InputFont.tres" type="DynamicFont" id=4]
+[ext_resource path="res://EventMaker/Background.png" type="Texture" id=5]
+[ext_resource path="res://ReturnButton.tscn" type="PackedScene" id=6]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.690196 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.443137, 0.443137, 0.443137, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -640.0
+margin_top = -360.0
+margin_right = -600.0
+margin_bottom = -320.0
+rect_min_size = Vector2( 1280, 720 )
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -410.0
+margin_top = -334.0
+margin_right = 410.0
+margin_bottom = 335.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -72.0
+margin_top = -57.0
+margin_right = 72.0
+margin_bottom = -21.0
+custom_fonts/font = ExtResource( 4 )
+text = "Generate Event"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ErrorWarning" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -313.5
+margin_top = -158.0
+margin_right = -83.5
+margin_bottom = -72.0
+custom_fonts/font = ExtResource( 1 )
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 15.0
+margin_right = -15.0
+margin_bottom = -61.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/MarginContainer"]
+margin_right = 790.0
+margin_bottom = 593.0
+custom_constants/separation = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer2"]
+margin_right = 226.0
+margin_bottom = 593.0
+size_flags_horizontal = 0
+custom_constants/separation = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Event_ID" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer"]
+margin_right = 226.0
+margin_bottom = 50.0
+
+[node name="EventIDLabel" type="Label" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Event_ID"]
+margin_top = 14.0
+margin_right = 122.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Event ID"
+
+[node name="EventIDEdit" type="LineEdit" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Event_ID"]
+margin_left = 126.0
+margin_right = 226.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+expand_to_text_length = true
+placeholder_text = "EventID"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Event_Name" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 55.0
+margin_right = 226.0
+margin_bottom = 105.0
+
+[node name="EventNameLabel" type="Label" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Event_Name"]
+margin_top = 14.0
+margin_right = 122.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Event Name"
+
+[node name="EventNameEdit" type="LineEdit" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Event_Name"]
+margin_left = 126.0
+margin_right = 226.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+expand_to_text_length = true
+placeholder_text = "EventName"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Event_Year" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 110.0
+margin_right = 226.0
+margin_bottom = 160.0
+
+[node name="EventYearLabel" type="Label" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Event_Year"]
+margin_top = 14.0
+margin_right = 122.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Event Year"
+align = 1
+
+[node name="EventYearEdit" type="LineEdit" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Event_Year"]
+margin_left = 126.0
+margin_right = 226.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+expand_to_text_length = true
+placeholder_text = "EventYear"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Event_StartDate" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 165.0
+margin_right = 226.0
+margin_bottom = 215.0
+
+[node name="EventStartDateLabel" type="Label" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Event_StartDate"]
+margin_top = 2.0
+margin_right = 122.0
+margin_bottom = 47.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Event Start
+Date"
+align = 1
+
+[node name="EventStartDateEdit" type="LineEdit" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Event_StartDate"]
+margin_left = 126.0
+margin_right = 226.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+expand_to_text_length = true
+placeholder_text = "EventStartDate"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Event_FinishDate" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 220.0
+margin_right = 226.0
+margin_bottom = 270.0
+
+[node name="EventFinishDateLabel" type="Label" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Event_FinishDate"]
+margin_top = 2.0
+margin_right = 122.0
+margin_bottom = 47.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Event Finish
+Date"
+align = 1
+
+[node name="EventFinishDateEdit" type="LineEdit" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Event_FinishDate"]
+margin_left = 126.0
+margin_right = 226.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+expand_to_text_length = true
+placeholder_text = "EventFinishDate"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gacha_Name" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 275.0
+margin_right = 226.0
+margin_bottom = 325.0
+
+[node name="GachaNameLabel" type="Label" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Gacha_Name"]
+margin_top = 2.0
+margin_right = 122.0
+margin_bottom = 47.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Gacha
+Name"
+align = 1
+
+[node name="GachaNameEdit" type="LineEdit" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Gacha_Name"]
+margin_left = 126.0
+margin_right = 226.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+expand_to_text_length = true
+placeholder_text = "GachaName"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Event_Type" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 330.0
+margin_right = 226.0
+margin_bottom = 380.0
+
+[node name="EventTypeLabel" type="Label" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Event_Type"]
+margin_top = 14.0
+margin_right = 122.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Event Type"
+align = 1
+
+[node name="EventTypeEdit" type="OptionButton" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Event_Type"]
+margin_left = 126.0
+margin_right = 226.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+
+[node name="idols" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer2"]
+margin_left = 246.0
+margin_right = 549.0
+margin_bottom = 266.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/separation = 30
+
+[node name="EventTypeLabel" type="Label" parent="Panel/MarginContainer/HBoxContainer2/idols"]
+margin_top = 110.0
+margin_right = 73.0
+margin_bottom = 155.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Idols In
+Event"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer2/idols"]
+margin_left = 103.0
+margin_right = 303.0
+margin_bottom = 266.0
+
+[node name="IDOL1" type="Button" parent="Panel/MarginContainer/HBoxContainer2/idols/VBoxContainer"]
+margin_right = 200.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 200, 50 )
+custom_fonts/font = ExtResource( 4 )
+text = "Idol1"
+
+[node name="IDOL2" type="Button" parent="Panel/MarginContainer/HBoxContainer2/idols/VBoxContainer"]
+margin_top = 54.0
+margin_right = 200.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 200, 50 )
+custom_fonts/font = ExtResource( 4 )
+text = "Idol2"
+
+[node name="IDOL3" type="Button" parent="Panel/MarginContainer/HBoxContainer2/idols/VBoxContainer"]
+margin_top = 108.0
+margin_right = 200.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 200, 50 )
+custom_fonts/font = ExtResource( 4 )
+text = "Idol3"
+
+[node name="IDOL4" type="Button" parent="Panel/MarginContainer/HBoxContainer2/idols/VBoxContainer"]
+margin_top = 162.0
+margin_right = 200.0
+margin_bottom = 212.0
+rect_min_size = Vector2( 200, 50 )
+custom_fonts/font = ExtResource( 4 )
+text = "Idol4"
+
+[node name="IDOL5" type="Button" parent="Panel/MarginContainer/HBoxContainer2/idols/VBoxContainer"]
+margin_top = 216.0
+margin_right = 200.0
+margin_bottom = 266.0
+rect_min_size = Vector2( 200, 50 )
+custom_fonts/font = ExtResource( 4 )
+text = "Idol5"
+
+[node name="Label" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -50.7009
+margin_top = -156.245
+margin_right = 293.299
+margin_bottom = -83.2445
+custom_fonts/font = ExtResource( 1 )
+text = "Idol1/Idol2 = Ranking rewards
+Idol3 = Point reward
+Idol 4/5 = Gacha idols"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WindowDialog" parent="." instance=ExtResource( 3 )]
+
+[node name="Button" parent="." instance=ExtResource( 6 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -619.708
+margin_top = 265.688
+margin_right = -446.708
+margin_bottom = 334.688
+[connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer2/idols/VBoxContainer/IDOL1" to="." method="_on_IDOL1_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer2/idols/VBoxContainer/IDOL2" to="." method="_on_IDOL2_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer2/idols/VBoxContainer/IDOL3" to="." method="_on_IDOL3_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer2/idols/VBoxContainer/IDOL4" to="." method="_on_IDOL4_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer2/idols/VBoxContainer/IDOL5" to="." method="_on_IDOL5_pressed"]

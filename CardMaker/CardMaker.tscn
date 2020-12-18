@@ -1,0 +1,611 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://EventMaker/NormalFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://CardMaker/CardMaker.gd" type="Script" id=2]
+[ext_resource path="res://IdolList3.tscn" type="PackedScene" id=3]
+[ext_resource path="res://EventMaker/InputFont.tres" type="DynamicFont" id=4]
+[ext_resource path="res://CardMaker/background.png" type="Texture" id=5]
+[ext_resource path="res://ReturnButton.tscn" type="PackedScene" id=6]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.690196 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.443137, 0.443137, 0.443137, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -640.0
+margin_top = -360.0
+margin_right = -600.0
+margin_bottom = -320.0
+rect_min_size = Vector2( 1280, 720 )
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -410.0
+margin_top = -334.0
+margin_right = 410.0
+margin_bottom = 335.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -72.0
+margin_top = -57.0
+margin_right = 72.0
+margin_bottom = -21.0
+custom_fonts/font = ExtResource( 4 )
+text = "Generate Card"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ErrorWarning" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -313.5
+margin_top = -158.0
+margin_right = -83.5
+margin_bottom = -72.0
+custom_fonts/font = ExtResource( 1 )
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 15.0
+margin_right = -15.0
+margin_bottom = -61.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/MarginContainer"]
+margin_right = 790.0
+margin_bottom = 593.0
+custom_constants/separation = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer2"]
+margin_right = 271.0
+margin_bottom = 593.0
+size_flags_horizontal = 0
+custom_constants/separation = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Card_Title_JPN" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer"]
+margin_right = 271.0
+margin_bottom = 50.0
+
+[node name="Card_Title_JPN_Label" type="Label" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Card_Title_JPN"]
+margin_top = 14.0
+margin_right = 167.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Card Title (JPN)"
+
+[node name="Card_Title_JPN_Edit" type="LineEdit" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Card_Title_JPN"]
+margin_left = 171.0
+margin_right = 271.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+expand_to_text_length = true
+placeholder_text = "JPN Title"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Card_Title_ENG" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 55.0
+margin_right = 271.0
+margin_bottom = 105.0
+
+[node name="Card_Title_ENG_Label" type="Label" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Card_Title_ENG"]
+margin_top = 14.0
+margin_right = 167.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Card Title (ENG)"
+
+[node name="Card_Title_ENG_Edit" type="LineEdit" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Card_Title_ENG"]
+margin_left = 171.0
+margin_right = 271.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+expand_to_text_length = true
+placeholder_text = "ENG Title"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Card_Rarity" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 110.0
+margin_right = 271.0
+margin_bottom = 160.0
+
+[node name="Card_Rarity_Label" type="Label" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Card_Rarity"]
+margin_top = 14.0
+margin_right = 167.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Card Rarity"
+align = 1
+
+[node name="Card_Rarity_Edit" type="OptionButton" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Card_Rarity"]
+margin_left = 171.0
+margin_right = 271.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+
+[node name="Description_1_JPN" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 165.0
+margin_right = 271.0
+margin_bottom = 215.0
+
+[node name="Description_1_JPN_Label" type="Label" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Description_1_JPN"]
+margin_top = 2.0
+margin_right = 167.0
+margin_bottom = 47.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Description 1
+(JPN)"
+align = 1
+
+[node name="Description_1_JPN_Edit" type="LineEdit" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Description_1_JPN"]
+margin_left = 171.0
+margin_right = 271.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+expand_to_text_length = true
+placeholder_text = "Descrip1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description_1_ENG" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 220.0
+margin_right = 271.0
+margin_bottom = 270.0
+
+[node name="Description_1_ENG_Label" type="Label" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Description_1_ENG"]
+margin_top = 2.0
+margin_right = 167.0
+margin_bottom = 47.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Description 1
+(ENG)"
+align = 1
+
+[node name="Description_1_ENG_Edit" type="LineEdit" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Description_1_ENG"]
+margin_left = 171.0
+margin_right = 271.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+expand_to_text_length = true
+placeholder_text = "Descrip1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description_2_JPN" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 275.0
+margin_right = 271.0
+margin_bottom = 325.0
+
+[node name="Description_2_JPN_Label" type="Label" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Description_2_JPN"]
+margin_top = 2.0
+margin_right = 167.0
+margin_bottom = 47.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Description 2
+(JPN)"
+align = 1
+
+[node name="Description_2_JPN_Edit" type="LineEdit" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Description_2_JPN"]
+margin_left = 171.0
+margin_right = 271.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+expand_to_text_length = true
+placeholder_text = "Descrip2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description_2_ENG" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 330.0
+margin_right = 271.0
+margin_bottom = 380.0
+
+[node name="Description_2_ENG_Label" type="Label" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Description_2_ENG"]
+margin_top = 2.0
+margin_right = 167.0
+margin_bottom = 47.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Description 2
+(ENG)"
+align = 1
+
+[node name="Description_2_ENG_Edit" type="LineEdit" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Description_2_ENG"]
+margin_left = 171.0
+margin_right = 271.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+expand_to_text_length = true
+placeholder_text = "Descrip2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Card_Cost" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 385.0
+margin_right = 271.0
+margin_bottom = 435.0
+
+[node name="Card_Cost_Label" type="Label" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Card_Cost"]
+margin_top = 14.0
+margin_right = 167.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Card Cost"
+align = 1
+
+[node name="Card_Cost_Edit" type="LineEdit" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer/Card_Cost"]
+margin_left = 171.0
+margin_right = 271.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+expand_to_text_length = true
+placeholder_text = "Cost"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer2"]
+margin_left = 291.0
+margin_right = 504.0
+margin_bottom = 593.0
+size_flags_horizontal = 0
+custom_constants/separation = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Skill_JPN" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2"]
+margin_right = 213.0
+margin_bottom = 50.0
+
+[node name="Skill_JPN_Label" type="Label" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2/Skill_JPN"]
+margin_top = 14.0
+margin_right = 109.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Skill (JPN)"
+align = 1
+
+[node name="Skill_JPN_Edit" type="LineEdit" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2/Skill_JPN"]
+margin_left = 113.0
+margin_right = 213.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+expand_to_text_length = true
+placeholder_text = "SkillJPN"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Skill_ENG" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2"]
+margin_top = 55.0
+margin_right = 213.0
+margin_bottom = 105.0
+
+[node name="Skill_ENG_Label" type="Label" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2/Skill_ENG"]
+margin_top = 2.0
+margin_right = 109.0
+margin_bottom = 47.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Skill (ENG)"
+align = 1
+autowrap = true
+
+[node name="Skill_ENG_Edit" type="LineEdit" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2/Skill_ENG"]
+margin_left = 113.0
+margin_right = 213.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+expand_to_text_length = true
+placeholder_text = "SkillENG"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Effect_JPN" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2"]
+margin_top = 110.0
+margin_right = 213.0
+margin_bottom = 160.0
+
+[node name="Effect_JPN_Label" type="Label" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2/Effect_JPN"]
+margin_top = 2.0
+margin_right = 109.0
+margin_bottom = 47.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Skill Effect
+(JPN)"
+align = 1
+
+[node name="Effect_JPN_Edit" type="LineEdit" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2/Effect_JPN"]
+margin_left = 113.0
+margin_right = 213.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+expand_to_text_length = true
+placeholder_text = "EffectJPN"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Effect_ENG" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2"]
+margin_top = 165.0
+margin_right = 213.0
+margin_bottom = 215.0
+
+[node name="Effect_ENG_Label" type="Label" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2/Effect_ENG"]
+margin_top = 2.0
+margin_right = 109.0
+margin_bottom = 47.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Skill Effect
+(ENG)"
+align = 1
+
+[node name="Effect_ENG_Edit" type="LineEdit" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2/Effect_ENG"]
+margin_left = 113.0
+margin_right = 213.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+expand_to_text_length = true
+placeholder_text = "SkillENG"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NOTES1" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2"]
+margin_top = 220.0
+margin_right = 213.0
+margin_bottom = 270.0
+
+[node name="NOTES1_Label" type="Label" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2/NOTES1"]
+margin_top = 14.0
+margin_right = 109.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Notes 1"
+align = 1
+
+[node name="NOTES1_Edit" type="LineEdit" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2/NOTES1"]
+margin_left = 113.0
+margin_right = 213.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+expand_to_text_length = true
+placeholder_text = "Notes1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NOTES2" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2"]
+margin_top = 275.0
+margin_right = 213.0
+margin_bottom = 325.0
+
+[node name="NOTES2_Label" type="Label" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2/NOTES2"]
+margin_top = 14.0
+margin_right = 109.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Notes 2"
+align = 1
+
+[node name="NOTES2_Edit" type="LineEdit" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2/NOTES2"]
+margin_left = 113.0
+margin_right = 213.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+expand_to_text_length = true
+placeholder_text = "Notes2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NOTES3" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2"]
+margin_top = 330.0
+margin_right = 213.0
+margin_bottom = 380.0
+
+[node name="NOTES3_Label" type="Label" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2/NOTES3"]
+margin_top = 14.0
+margin_right = 109.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Notes 3"
+align = 1
+
+[node name="NOTES3_Edit" type="LineEdit" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2/NOTES3"]
+margin_left = 113.0
+margin_right = 213.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+expand_to_text_length = true
+placeholder_text = "Notes3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NOTES4" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2"]
+margin_top = 385.0
+margin_right = 213.0
+margin_bottom = 435.0
+
+[node name="NOTES4_Label" type="Label" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2/NOTES4"]
+margin_top = 14.0
+margin_right = 109.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Notes 4"
+align = 1
+
+[node name="NOTES4_Edit" type="LineEdit" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2/NOTES4"]
+margin_left = 113.0
+margin_right = 213.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+expand_to_text_length = true
+placeholder_text = "Notes4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NOTES5" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2"]
+margin_top = 440.0
+margin_right = 213.0
+margin_bottom = 490.0
+
+[node name="NOTES5_Label" type="Label" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2/NOTES5"]
+margin_top = 14.0
+margin_right = 109.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Notes 5"
+align = 1
+
+[node name="NOTES5_Edit" type="LineEdit" parent="Panel/MarginContainer/HBoxContainer2/VBoxContainer2/NOTES5"]
+margin_left = 113.0
+margin_right = 213.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+expand_to_text_length = true
+placeholder_text = "Notes5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Panel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -131.748
+margin_top = 23.0173
+margin_right = -31.748
+margin_bottom = 73.0173
+text = "CardData+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WindowDialog" parent="." instance=ExtResource( 3 )]
+
+[node name="Button" parent="." instance=ExtResource( 6 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -621.409
+margin_top = 263.805
+margin_right = -448.409
+margin_bottom = 332.805
+rect_pivot_offset = Vector2( 2375.81, 411.254 )
+[connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Panel/Button2" to="." method="_on_CardDataPlus_pressed"]

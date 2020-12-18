@@ -1,0 +1,15 @@
+{{CardData+
+| title-jpn=TITLE_JPN
+| title-eng=TITLE_ENG
+| rare=CARD_RARITY
+| descrip1-jpn=DESCRIP1_JPN
+| descrip1-eng=DESCRIP1_ENG
+| cost=CARD_COST
+| skill-jpn=SKILL_JPN
+| skill-eng=SKILL_ENG
+| effect-jpn=EFFECT_JPN
+| effect-eng=EFFECT_ENG
+| notes1=NOTES_1
+| notes2=NOTES_2
+| notes3=NOTES_3 | notes4=NOTES_4 | notes5= NOTES_5
+}}
