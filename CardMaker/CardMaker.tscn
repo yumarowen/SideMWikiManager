@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://EventMaker/NormalFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://CardMaker/CardMaker.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://EventMaker/InputFont.tres" type="DynamicFont" id=4]
 [ext_resource path="res://CardMaker/background.png" type="Texture" id=5]
 [ext_resource path="res://ReturnButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://ClearButton.tscn" type="PackedScene" id=7]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.690196 )
@@ -19,7 +20,7 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color( 0.443137, 0.443137, 0.443137, 1 )
+modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -135,7 +136,6 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 custom_fonts/font = ExtResource( 4 )
 align = 1
-expand_to_text_length = true
 placeholder_text = "JPN Title"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -161,7 +161,6 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 custom_fonts/font = ExtResource( 4 )
 align = 1
-expand_to_text_length = true
 placeholder_text = "ENG Title"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -211,7 +210,6 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 custom_fonts/font = ExtResource( 4 )
 align = 1
-expand_to_text_length = true
 placeholder_text = "Descrip1"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -239,7 +237,6 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 custom_fonts/font = ExtResource( 4 )
 align = 1
-expand_to_text_length = true
 placeholder_text = "Descrip1"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -267,7 +264,6 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 custom_fonts/font = ExtResource( 4 )
 align = 1
-expand_to_text_length = true
 placeholder_text = "Descrip2"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -295,7 +291,6 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 custom_fonts/font = ExtResource( 4 )
 align = 1
-expand_to_text_length = true
 placeholder_text = "Descrip2"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -322,7 +317,6 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 custom_fonts/font = ExtResource( 4 )
 align = 1
-expand_to_text_length = true
 placeholder_text = "Cost"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -358,7 +352,6 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 custom_fonts/font = ExtResource( 4 )
 align = 1
-expand_to_text_length = true
 placeholder_text = "SkillJPN"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -386,7 +379,6 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 custom_fonts/font = ExtResource( 4 )
 align = 1
-expand_to_text_length = true
 placeholder_text = "SkillENG"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -414,7 +406,6 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 custom_fonts/font = ExtResource( 4 )
 align = 1
-expand_to_text_length = true
 placeholder_text = "EffectJPN"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -442,7 +433,6 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 custom_fonts/font = ExtResource( 4 )
 align = 1
-expand_to_text_length = true
 placeholder_text = "SkillENG"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -469,7 +459,6 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 custom_fonts/font = ExtResource( 4 )
 align = 1
-expand_to_text_length = true
 placeholder_text = "Notes1"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -496,7 +485,6 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 custom_fonts/font = ExtResource( 4 )
 align = 1
-expand_to_text_length = true
 placeholder_text = "Notes2"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -523,7 +511,6 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 custom_fonts/font = ExtResource( 4 )
 align = 1
-expand_to_text_length = true
 placeholder_text = "Notes3"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -550,7 +537,6 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 custom_fonts/font = ExtResource( 4 )
 align = 1
-expand_to_text_length = true
 placeholder_text = "Notes4"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -577,7 +563,6 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 custom_fonts/font = ExtResource( 4 )
 align = 1
-expand_to_text_length = true
 placeholder_text = "Notes5"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -595,6 +580,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Button3" parent="Panel" instance=ExtResource( 7 )]
+
 [node name="WindowDialog" parent="." instance=ExtResource( 3 )]
 
 [node name="Button" parent="." instance=ExtResource( 6 )]
@@ -609,3 +596,4 @@ margin_bottom = 332.805
 rect_pivot_offset = Vector2( 2375.81, 411.254 )
 [connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Panel/Button2" to="." method="_on_CardDataPlus_pressed"]
+[connection signal="pressed" from="Panel/Button3" to="." method="_on_Clear_pressed"]

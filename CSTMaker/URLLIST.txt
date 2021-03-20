@@ -1,0 +1,19 @@
+[HpMasterAlbumCards]
+	[Token(Token = "0x4001235")]
+	[FieldOffset(Offset = "0x10")]
+	public int cardId;
+	[Token(Token = "0x4001236")]
+	[FieldOffset(Offset = "0x18")]
+	public long startAt;
+
+[HpMasterBeginnerMission]
+	[Token(Token = "0x4001235")]
+	[FieldOffset(Offset = "0x10")]
+	public int cardId;
+
+	// Token: 0x04001A93 RID: 6803
+	[Token(Token = "0x4001236")]
+	[FieldOffset(Offset = "0x18")]
+	public long startAt;
+
+[HpMasterBeg

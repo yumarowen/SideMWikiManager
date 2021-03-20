@@ -1,0 +1,33 @@
+        private void CSTtoNAME1(string folder)
+        {
+            string[] masterCSTs = new string[] { "NAME2.cst" };
+            foreach (string masterCST in masterCSTs)
+            {
+                try
+                {
+                    string urls = "";
+                    string file = Path.Combine(folder, masterCST);
+                    HpMasterNAME1[] array = NAME1(file);
+                    foreach (HpMasterNAME1 masterMission in array)
+                    {
+                        urls
+                    }
+                    File.WriteAllText(file.Replace(".cst", "-decrypted.txt"), urls);
+                }
+                catch { }
+            }
+        }
+	
+	        private HpMasterNAME1[] NAME1(string file)
+        {
+            byte[] CstIn = File.ReadAllBytes(file);
+            byte[] CstDecrypted = HpCrypt.DecryptBytes(CstIn, p1);
+            Dictionary<long, byte[]> dictionary = HpMasterCluster.Decode_ToMasterBins(CstDecrypted, false);
+            List<HpMasterNAME1> list = new List<HpMasterNAME1>();
+            foreach (KeyValuePair<long, byte[]> current in dictionary)
+            {
+                list.Add(HpMasterBin.Decode<HpMasterNAME1>(current.Value, false));
+            }
+            return list.ToArray();
+
+        }

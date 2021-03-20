@@ -49,7 +49,7 @@ func _init_RARITY_LIST():
 
 func generate_card():
 	if not CardTitleJPN.text == "":
-		NewCardFile.open('res://CardMaker/'+CardTitleJPN.text+'+.txt',File.WRITE)
+		NewCardFile.open('res://CardMaker/'+CardTitleJPN.text+'.txt',File.WRITE)
 		replace_CardTitle()
 		replace_CardRarity()
 		replace_CardDescription()
@@ -58,8 +58,9 @@ func generate_card():
 		replace_CardEffect()
 		replace_CardNotes()
 		NewCardFile.store_string(CardTemplateContent)
+		OS.set_clipboard(CardTemplateContent)
 		NewCardFile.close()
-		LogInfo.text = 'Card Code has been generated!'
+		LogInfo.text = 'Card Code has been generated and copied to clipboard!'
 		reset_file()
 	else:
 		LogInfo.text = "Japanese Card Title is invalid"
@@ -152,3 +153,20 @@ func reset_file():
 
 func _on_Button2_pressed():
 	get_tree().change_scene(CardDataScreen)
+
+func _on_Clear_pressed():
+	CardRarityEdit.selected = 0
+	CardCost.text = ""
+	Notes1.text = ""
+	Notes2.text = ""
+	Notes3.text = ""
+	Notes4.text = ""
+	Notes5.text = ""
+	CardTitleJPN.text = ""
+	CardDescription1JPN.text = ""
+	CardSkillJPN.text = ""
+	CardEffectJPN.text = ""
+	CardTitleENG.text = ""
+	CardDescription1ENG.text = ""
+	CardSkillENG.text = ""
+	CardEffectENG.text = ""

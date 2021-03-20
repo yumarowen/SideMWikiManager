@@ -8,7 +8,7 @@ func setup(Name):
 	Name2 = Name
 	$CheckBox.toggle_mode = false
 	$CheckBox.text = Name2
-	$CheckBox.icon = load("res://EventMaker/icons/"+Name2+".png")
+	$CheckBox.set_button_icon(load("EventMaker/Icons/"+Name2+".png"))
 
 func change_idol_number(number):
 	IDOL_NUM = number
@@ -18,6 +18,4 @@ func _ready():
 
 func _on_CheckBox_pressed():
 	$CheckBox.pressed == false
-	print(Name2)
-	print(IDOL_NUM)
 	Global.emit_signal("ButtonPressed", Name2, IDOL_NUM)

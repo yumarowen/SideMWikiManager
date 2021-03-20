@@ -48,7 +48,6 @@ func _ready():
 func _init_RARITY_LIST():
 	CardRarityEdit.add_item("R")
 	CardRarityEdit.add_item("SR")
-	CardRarityEdit.add_item("SSR")
 	
 func generate_card():
 	if not CardTitleJPN.text == "":
@@ -61,8 +60,9 @@ func generate_card():
 		replace_CardEffect()
 		replace_CardNotes()
 		NewCardFile.store_string(CardTemplateContent)
+		OS.set_clipboard(CardTemplateContent)
 		NewCardFile.close()
-		LogInfo.text = 'Card Code has been generated!'
+		LogInfo.text = 'Card Code has been generated and copied to clipboard!'
 		reset_file()
 	else:
 		LogInfo.text = "Japanese Card Title is invalid"
@@ -83,8 +83,6 @@ func replace_CardRarity():
 			CardRarity = "R"
 		1:
 			CardRarity = "SR"
-		2:
-			CardRarity = "SSR"
 		_:
 			CardRarity = ""
 			LogInfo.text = "Card Rarity is Invalid"
@@ -166,3 +164,23 @@ func reset_file():
 
 func _on_CardDataPlus_pressed():
 	get_tree().change_scene(CardDataPlusScreen)
+
+
+func _on_Clear_pressed():
+	CardRarityEdit.selected = 0
+	CardCost.text = ""
+	Notes1.text = ""
+	Notes2.text = ""
+	Notes3.text = ""
+	Notes4.text = ""
+	Notes5.text = ""
+	CardTitleJPN.text = ""
+	CardDescription1JPN.text = ""
+	CardDescription2JPN.text = ""
+	CardSkillJPN.text = ""
+	CardEffectJPN.text = ""
+	CardTitleENG.text = ""
+	CardDescription1ENG.text = ""
+	CardDescription2ENG.text = ""
+	CardSkillENG.text = ""
+	CardEffectENG.text = ""

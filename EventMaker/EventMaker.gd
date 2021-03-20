@@ -69,8 +69,9 @@ func generate_Event():
 		replace_idols()
 		replace_GACHA_NAME()
 		NewEventFile.store_string(EventTemplateContent)
+		OS.set_clipboard(EventTemplateContent)
 		NewEventFile.close()
-		LogInfo.text = 'Event Code has been generated!'
+		LogInfo.text = 'Event Code has been generated and copied to clipboard!'
 		reset_file()
 	else:
 		LogInfo.text = "Event ID is invalid"

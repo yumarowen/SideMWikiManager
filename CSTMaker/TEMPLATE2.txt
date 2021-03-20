@@ -1,0 +1,1 @@
+CSTtoNAME1(Directory.GetCurrentDirectory() + "/masters/");

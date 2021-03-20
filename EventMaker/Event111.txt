@@ -1,0 +1,8 @@
+|-
+|111
+|[[File:e-111.png|200px|border|center|frameless|link=EVENT_NAME]][[EVENT_NAME]]
+|EVENT_YEAR
+|START_DATE – FINISH_DATE
+|L
+|[[File:Rei Kagura-icon.png|50px|link=Rei Kagura]]
+|[[File:g-111.png|200px|border|center|frameless|link=]]GACHA_NAME

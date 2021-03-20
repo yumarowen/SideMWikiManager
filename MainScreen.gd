@@ -2,6 +2,7 @@ extends Control
 
 
 var CardMaker = 'res://CardMaker/CardMaker.tscn'
+var CSTMaker = 'res://CSTMaker/CSTMaker.tscn'
 var EventMaker = 'res://EventMaker/EventMaker.tscn'
 
 
@@ -21,3 +22,7 @@ func _on_EventMaker_Pressed():
 
 func _on_CardMaker_pressed():
 	get_tree().change_scene(CardMaker)
+
+
+func _on_CSTMaker_pressed():
+	get_tree().change_scene(CSTMaker)

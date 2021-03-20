@@ -19,7 +19,7 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color( 0.443137, 0.443137, 0.443137, 1 )
+modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -135,7 +135,6 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 custom_fonts/font = ExtResource( 4 )
 align = 1
-expand_to_text_length = true
 placeholder_text = "EventID"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -161,7 +160,6 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 custom_fonts/font = ExtResource( 4 )
 align = 1
-expand_to_text_length = true
 placeholder_text = "EventName"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -188,7 +186,6 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 custom_fonts/font = ExtResource( 4 )
 align = 1
-expand_to_text_length = true
 placeholder_text = "EventYear"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -216,7 +213,6 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 custom_fonts/font = ExtResource( 4 )
 align = 1
-expand_to_text_length = true
 placeholder_text = "EventStartDate"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -244,7 +240,6 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 custom_fonts/font = ExtResource( 4 )
 align = 1
-expand_to_text_length = true
 placeholder_text = "EventFinishDate"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -272,7 +267,6 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 custom_fonts/font = ExtResource( 4 )
 align = 1
-expand_to_text_length = true
 placeholder_text = "GachaName"
 __meta__ = {
 "_edit_use_anchors_": false
